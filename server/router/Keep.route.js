@@ -8,7 +8,6 @@ const KeepBin = require('../model/KeepBin.model')
 const { json } = require('body-parser')
 const { text } = require('express')
 
-
 /** get all = keep data */
 route.get('/', (req, res) => {
     Keep.find()
@@ -41,7 +40,6 @@ route.get('/bin', (req, res) => {
         res.status(400).json(err)
     })
 })
-
 
 /**get/:id  one data = keep Data */
 route.get('/:id', (req, res) => {
@@ -178,7 +176,6 @@ route.delete('/bin/:id', (req, res) => {
         })
 })
 
-
 /**Delete all = keep */
 route.delete('/', (req, res) => {
     Keep.remove()
@@ -189,6 +186,7 @@ route.delete('/', (req, res) => {
             res.status(400).json(result)
         })
 })
+
 /**Delete all = archive */
 route.delete('/archive', (req, res) => {
     KeepArchive.remove()
@@ -199,6 +197,7 @@ route.delete('/archive', (req, res) => {
             res.status(400).json(result)
         })
 })
+
 /**Delete all = bin */
 route.delete('/bin', (req, res) => {
     KeepBin.remove()
@@ -220,6 +219,7 @@ route.get('/search/:text', (req, res) => {
         res.status(400).json(err)
     })
 });
+
 /**  Search = archive */
 route.get('/archive/search/:text', (req, res) => {
     var text = new RegExp(req.params.text, 'i');
@@ -230,6 +230,5 @@ route.get('/archive/search/:text', (req, res) => {
         res.status(400).json(err)
     })
 });
-
 
 module.exports = route
