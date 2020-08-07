@@ -9,8 +9,6 @@ import Axios from 'axios'
 import Archive from './components/Archive/Archive'
 import Bin from './components/Bin/Bin'
 
-
-
 class App extends Component {
 
     constructor(props) {
@@ -78,7 +76,8 @@ class App extends Component {
 
                     <Navbar navTitle={this.state.navTitle} toggleNavbar={this.state.toggleNavbar} toggleNavbarHandler={this.toggleNavbarHandler} search={this.state.search} searchHandler={this.searchHandler} refreshPage={this.refreshPage} gridView={this.state.gridView} gridViewhandler={this.gridViewhandler} />
 
-                    {this.state.toggleNavbar ?
+                    {this.state.toggleNavbar 
+                        ?
                         <div className='sidebar'>
                             <ul className='sidebar-ul'>
 
@@ -103,7 +102,8 @@ class App extends Component {
                             </ul>
                         </div>
 
-                        : null}
+                        : 
+                        null}
 
                     <Switch>
                         <Route exact path='/'>
